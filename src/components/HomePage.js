@@ -28,7 +28,7 @@ class HomePage extends React.Component{
               <Balance />
               </div>
               <div className='col-3'>
-              <img style = {{height:'450px',width:'280px',marginTop:'10%'}} src={imagead} />
+              <img style = {{height:'40px',width:'280px',marginTop:'10%'}} src={imagead} />
               </div> 
               </div>
               
