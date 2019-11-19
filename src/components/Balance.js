@@ -58,7 +58,7 @@ export default class Balance extends React.Component{
                                             </div>
                                         </Col>
                                         <Col md={1} style={{padding:'10px'}}>
-                                            $4000
+                                            $2500
                                         </Col>
                                     </Row>
                                     <Row className="mt-2">
@@ -67,7 +67,7 @@ export default class Balance extends React.Component{
                                         </Col>
                                         <Col md={4} className="ml-2">
                                             <p className="mb-0">Halifax</p>           
-                                            <b>0.2% AER</b>
+                                            <b>0.1% AER</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
@@ -75,7 +75,7 @@ export default class Balance extends React.Component{
                                             </div>
                                         </Col>
                                         <Col md={1} style={{padding:'10px'}}>
-                                            $6000
+                                            $4000
                                         </Col>
                                     </Row>
                                     <Row className="mt-2">
@@ -84,7 +84,7 @@ export default class Balance extends React.Component{
                                         </Col>
                                         <Col md={4} className="ml-2">
                                             <p className="mb-0">Halifax</p>           
-                                            <b>0.2% AER</b>
+                                            <b>0.25% AER</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
@@ -92,7 +92,7 @@ export default class Balance extends React.Component{
                                             </div>
                                         </Col>
                                         <Col md={1} className="ml-0" style={{padding:'10px'}}>
-                                            $2500
+                                            $6000
                                         </Col>
                                     </Row>
                                 </div>
@@ -132,15 +132,15 @@ export default class Balance extends React.Component{
                                         </Col>
                                         <Col md={4} className="ml-2">
                                             <p className="mb-0">Halifax</p>           
-                                            <b>0.2% AER</b>
+                                            <b>37.1% APR</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
                                                 <b >PCA</b>
                                             </div>
                                         </Col>
-                                        <Col md={1} style={{padding:'10px'}}>
-                                            $4000
+                                        <Col md={1} style={{padding:'10px',color : "red"}}>
+                                            $1800
                                         </Col>
                                     </Row>
                                     <Row className="mt-2">
@@ -149,15 +149,15 @@ export default class Balance extends React.Component{
                                         </Col>
                                         <Col md={4} className="ml-2">
                                             <p className="mb-0">Halifax</p>           
-                                            <b>0.2% AER</b>
+                                            <b>19.94% APR</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
                                                 <b >SB</b>
                                             </div>
                                         </Col>
-                                        <Col md={1} style={{padding:'10px'}}>
-                                            $6000
+                                        <Col md={1} style={{padding:'10px',color : "red"}}>
+                                            $1200
                                         </Col>
                                     </Row>
                                     <Row className="mt-2">
@@ -166,15 +166,15 @@ export default class Balance extends React.Component{
                                         </Col>
                                         <Col md={4} className="ml-2">
                                             <p className="mb-0">Halifax</p>           
-                                            <b>0.2% AER</b>
+                                            <b>3.3% APR</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
                                                 <b >SB</b>
                                             </div>
                                         </Col>
-                                        <Col md={1} className="ml-0" style={{padding:'10px'}}>
-                                            $2500
+                                        <Col md={1} className="ml-0" style={{padding:'10px',color : "red"}}>
+                                            $800
                                         </Col>
                                     </Row>
                                 </div>
