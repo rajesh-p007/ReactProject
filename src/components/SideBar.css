@@ -1,0 +1,12 @@
+.ic_home {
+    width: 24px;
+    height: 21px;
+    object-fit: contain;
+  }
+  
+  .sidebar-wrapper {
+    width: 5%;
+  }
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
