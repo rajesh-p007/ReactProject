@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import not from '../images/not.png';
 import imgu from '../images/img-u.png'
+import {Link} from 'react-router-dom';
 
 class Header extends React.Component {
   constructor() {
@@ -25,13 +26,9 @@ class Header extends React.Component {
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="col">
                 <img className="img_user" src={imgu} />
               </div>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="col-3">
-                <span className='Alice-Salas' style={{ paddingRight: '7px', textTransform: 'capitalize' }}>{this.props.username}</span>
-                <i className="fas fa-caret-down"></i>
-              </div>
 
               <div style={{ display: 'flex', color: 'rgb(216, 217, 222)', justifyContent: 'center', alignItems: 'center' }} className="col">
-                <i className="fas fa-sign-out-alt logout"></i>
+                <Link to="/login"><i className="fa fa-sign-out logout"></i></Link>
               </div>
             </div>
           </div>

@@ -12,7 +12,14 @@ import './App.css';
 
 function App() {
   return (
-    <HomePage />
+    <Router>
+
+      <Switch>
+        <Route exact path="/home" component={HomePage}/>
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/" component ={LoginPage} />
+      </Switch>
+    </Router>
   );
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Route , Switch , Link, BrowserRouter as Router } from 'react-router-dom';
 import './LoginPage.css';
 import HomePage from './HomePage.js';
-import { withRouter } from 'react-router-dom';
 import BackgroundLogin from '../images/il-login-page.png'
 
 
@@ -51,7 +50,7 @@ import BackgroundLogin from '../images/il-login-page.png'
                   </div>
                 </div>
                 
-        <button className='button_background ' style={{
+        <Link to="/home"><button className='button_background ' style={{
           display: 'flex', alignItems: 'center',
           justifyContent: 'center', cursor: 'pointer'
         }}
@@ -59,6 +58,7 @@ import BackgroundLogin from '../images/il-login-page.png'
          >
           SIGN IN  
         </button>
+        </Link>
     
               </div>
             </div>
