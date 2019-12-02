@@ -1,12 +1,6 @@
 import React from 'react';
 import { Row, Col, Grid } from 'react-bootstrap';
 import './Balance.css';
-// import halifax from '../images/cards/debit/halifax@2x.png';
-// import hsbc from '../images/cards/debit/hsbc@2x.png';
-// import barclaysd from '../images/cards/debit/barclays@2x.png';
-import natwest from '../images/cards/Credit/NatWest@2x.png';
-import rbs from '../images/cards/Credit/RBS@2x.png';
-import barclaysc from '../images/cards/Credit/Barclays@2x.png';
 
 export default class Balance extends React.Component{
 
