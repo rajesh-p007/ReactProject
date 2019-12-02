@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col, Grid } from 'react-bootstrap';
 import './Balance.css';
-import halifax from '../images/cards/debit/halifax@2x.png';
-import hsbc from '../images/cards/debit/hsbc@2x.png';
-import barclaysd from '../images/cards/debit/barclays@2x.png';
+// import halifax from '../images/cards/debit/halifax@2x.png';
+// import hsbc from '../images/cards/debit/hsbc@2x.png';
+// import barclaysd from '../images/cards/debit/barclays@2x.png';
 import natwest from '../images/cards/Credit/NatWest@2x.png';
 import rbs from '../images/cards/Credit/RBS@2x.png';
 import barclaysc from '../images/cards/Credit/Barclays@2x.png';
@@ -12,6 +12,61 @@ export default class Balance extends React.Component{
 
   constructor(){
     super()
+    this.state = {
+        debit_balance : [
+            {
+                id : 1,
+                image : require('../images/cards/debit/halifax@2x.png'),
+                name : "Halifax",
+                AER : "0.2% AER",
+                details : "PCA",
+                amount : "$2500",
+            },
+            {
+                id : 2,
+                image : require('../images/cards/debit/hsbc@2x.png'),
+                name : "HSBC",
+                AER : "0.1% AER",
+                details : "SB",
+                amount : "$4000",
+            },
+            {
+                id : 3,
+                image : require('../images/cards/debit/barclays@2x.png'),
+                name : "Barclays",
+                AER : "0.25% AER",
+                details : "SB",
+                amount : "$6000",
+            }
+        ],
+        credit_balance : [
+            {
+                id : 1,
+                image : require('../images/cards/Credit/NatWest@2x.png'),
+                name : "Natwest",
+                APR : "37.1% APR",
+                details : "PCA",
+                amount : "$1800",
+            },
+            {
+                id : 2,
+                image : require('../images/cards/Credit/RBS@2x.png'),
+                name : "RBS",
+                APR : "19.94% APR",
+                details : "SB",
+                amount : "$1200",
+            },
+            {
+                id : 3,
+                image : require('../images/cards/Credit/Barclays@2x.png'),
+                name : "Barclays",
+                APR : "3.3% APR",
+                details : "SB",
+                amount : "$800",
+            }
+        ]
+    }
+
   }
 
  
@@ -44,57 +99,30 @@ export default class Balance extends React.Component{
                                             <i class="fa fa-bar-chart" aria-hidden="true"></i>
                                         </Col>
                                     </Row>
-                                    <Row className="mt-2">
+                                    {
+                                        this.state.debit_balance.map(data =>(
+                                            <Row className="mt-2">
                                         <Col md={3}>
-                                            <img width="120%" src={halifax} alt="Card"/>
+                                            <img width="120%" src={data.image} alt="Card"/>
                                         </Col>
                                         <Col md={4} className="ml-2">
-                                            <p className="mb-0">Halifax</p>           
-                                            <b>0.2% AER</b>
+                                        <p className="mb-0">{data.name}</p>           
+                                        <b>{data.AER}</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
-                                                <b >PCA</b>
+                                        <b >{data.details}</b>
                                             </div>
                                         </Col>
                                         <Col md={1} style={{padding:'10px'}}>
-                                            $2500
+                                            {data.amount}
                                         </Col>
-                                    </Row>
-                                    <Row className="mt-2">
-                                        <Col md={3}>
-                                            <img width="120%" src={hsbc} alt="Card"/>
-                                        </Col>
-                                        <Col md={4} className="ml-2">
-                                            <p className="mb-0">Halifax</p>           
-                                            <b>0.1% AER</b>
-                                        </Col>
-                                        <Col md={3} >
-                                            <div style={{borderRight:'1px solid gray', padding:'10px'}}>
-                                                <b >SB</b>
-                                            </div>
-                                        </Col>
-                                        <Col md={1} style={{padding:'10px'}}>
-                                            $4000
-                                        </Col>
-                                    </Row>
-                                    <Row className="mt-2">
-                                        <Col md={3}>
-                                            <img width="120%" src={barclaysd} alt="Card"/>
-                                        </Col>
-                                        <Col md={4} className="ml-2">
-                                            <p className="mb-0">Halifax</p>           
-                                            <b>0.25% AER</b>
-                                        </Col>
-                                        <Col md={3} >
-                                            <div style={{borderRight:'1px solid gray', padding:'10px'}}>
-                                                <b >SB</b>
-                                            </div>
-                                        </Col>
-                                        <Col md={1} className="ml-0" style={{padding:'10px'}}>
-                                            $6000
-                                        </Col>
-                                    </Row>
+                                     </Row>
+                                        ))
+
+                                        
+                                    }
+                                   
                                 </div>
                            
                             </div>
@@ -126,57 +154,29 @@ export default class Balance extends React.Component{
                                             <i class="fa fa-bar-chart" aria-hidden="true"></i>
                                         </Col>
                                     </Row>
-                                    <Row className="mt-2">
+                                    {
+                                        this.state.credit_balance.map(data => (
+                                            <Row className="mt-2">
                                         <Col md={3}>
-                                            <img width="120%" src={natwest} alt="Card"/>
+                                            <img width="120%" src={data.image} alt="Card"/>
                                         </Col>
                                         <Col md={4} className="ml-2">
-                                            <p className="mb-0">Halifax</p>           
-                                            <b>37.1% APR</b>
+                                            <p className="mb-0">{data.name}</p>           
+                                        <b>{data.APR}</b>
                                         </Col>
                                         <Col md={3} >
                                             <div style={{borderRight:'1px solid gray', padding:'10px'}}>
-                                                <b >PCA</b>
+                                                <b >{data.details}</b>
                                             </div>
                                         </Col>
                                         <Col md={1} style={{padding:'10px',color : "red"}}>
-                                            $1800
+                                            {data.amount}
                                         </Col>
                                     </Row>
-                                    <Row className="mt-2">
-                                        <Col md={3}>
-                                            <img width="120%" src={rbs} alt="Card"/>
-                                        </Col>
-                                        <Col md={4} className="ml-2">
-                                            <p className="mb-0">Halifax</p>           
-                                            <b>19.94% APR</b>
-                                        </Col>
-                                        <Col md={3} >
-                                            <div style={{borderRight:'1px solid gray', padding:'10px'}}>
-                                                <b >SB</b>
-                                            </div>
-                                        </Col>
-                                        <Col md={1} style={{padding:'10px',color : "red"}}>
-                                            $1200
-                                        </Col>
-                                    </Row>
-                                    <Row className="mt-2">
-                                        <Col md={3}>
-                                            <img width="120%" src={barclaysc} alt="Card"/>
-                                        </Col>
-                                        <Col md={4} className="ml-2">
-                                            <p className="mb-0">Halifax</p>           
-                                            <b>3.3% APR</b>
-                                        </Col>
-                                        <Col md={3} >
-                                            <div style={{borderRight:'1px solid gray', padding:'10px'}}>
-                                                <b >SB</b>
-                                            </div>
-                                        </Col>
-                                        <Col md={1} className="ml-0" style={{padding:'10px',color : "red"}}>
-                                            $800
-                                        </Col>
-                                    </Row>
+                                        ))
+                                    }
+                                    
+                                    
                                 </div>
                            
                             </div>
