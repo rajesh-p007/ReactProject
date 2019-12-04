@@ -6,10 +6,30 @@ import BackgroundLogin from '../images/il-login-page.png'
 
 
  class LoginPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+      this.state = {user:'', password:''};
+      this.handleUserChange = this.handleUserChange.bind(this);
+      this.handlePasswordChange = this.handlePasswordChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
 
     }
+
+    handleUserChange(event) { 
+      this.setState({user: event.target.value});
+    }
+
+    handlePasswordChange(event) { 
+      this.setState({password: event.target.value});
+    }
+  
+    handleSubmit(event) {
+      if(this.state.user == "lloyds" && this.state.password == "lloyds123")
+       this.props.history.push('/home')
+       else
+       alert("Enter valid Username")
+    }
+
   render(){
 
         return (
@@ -23,7 +43,9 @@ import BackgroundLogin from '../images/il-login-page.png'
               <img style={{ width: '85%' }} src={BackgroundLogin} />
             </div>
             <div className='col-5' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <form onSubmit={this.handleSubmit}>
               <div className='Login_Background' style={{ paddingTop: '49px', paddingLeft: '38px' }}>
+                
                 <div className='Sign_in_to_your_account'>
                   Sign in to your account
                 </div>
@@ -38,19 +60,21 @@ import BackgroundLogin from '../images/il-login-page.png'
                   </div>
                 </div>
                 <input type='text' className='field_outline' style={{ marginTop: '28px' }}
-                  placeholder='User name' defaultValue='alice' id="username" autoFocus={true} />
-                <input type='password' className='field_outline' style={{ marginTop: '13.9px' }}
-                  placeholder='Password' defaultValue='wonderland' id="pwd" />
+                  placeholder='User name' id="username" autoFocus={true}
+                  name="user" value={this.state.value} onChange={this.handleUserChange} />
+                <input type='password' className='field_outline' style={{ marginTop: '13.9px' }} ref="password"
+                  placeholder='Password' id="pwd"
+                  value={this.state.value} onChange={this.handlePasswordChange} />
                 <div style={{ marginTop: '19.9px' }}>
                   <div style={{ float: 'left', marginRight: '10px' }}>
                     <input type='checkbox' />
                   </div>
-                  <div style={{}}>
-                    <div className=''>Keep me signed in</div>
+                  <div>
+                    <div>Keep me signed in</div>
                   </div>
                 </div>
-                
-        <Link to="/home"><button className='button_background ' style={{
+            
+        <button type="submit"  className='form-control button_background ' style={{
           display: 'flex', alignItems: 'center',
           justifyContent: 'center', cursor: 'pointer'
         }}
@@ -58,9 +82,12 @@ import BackgroundLogin from '../images/il-login-page.png'
          >
           SIGN IN  
         </button>
-        </Link>
+        
+        
+        
     
               </div>
+              </form>
             </div>
           </div>
         </div>

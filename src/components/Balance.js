@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Grid } from 'react-bootstrap';
+import db from './db.json';
 import './Balance.css';
 
 export default class Balance extends React.Component{
@@ -94,7 +95,7 @@ export default class Balance extends React.Component{
                                         </Col>
                                     </Row>
                                     {
-                                        this.state.debit_balance.map(data =>(
+                                        this.state.credit_balance.map(data =>(
                                             <Row className="mt-2">
                                         <Col md={3}>
                                             <img width="120%" src={data.image} alt="Card"/>
