@@ -8,18 +8,19 @@ import Banner from './components/Banner.js';
 import Header from './components/Header.js';
 import SideBar from './components/SideBar.js';
 import Balance from './components/Balance.js';
+import Temp from './components/Temp.js';
 import './App.css';
 
 function App() {
   return (
     <Router>
-
       <Switch>
         <Route exact path="/home" component={HomePage}/>
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/" component ={LoginPage} />
       </Switch>
     </Router>
+    
   );
 }
 

@@ -2,16 +2,18 @@ import React from 'react';
 import { Route , Switch , Link, BrowserRouter as Router } from 'react-router-dom';
 import './LoginPage.css';
 import HomePage from './HomePage.js';
-import BackgroundLogin from '../images/il-login-page.png'
+import BackgroundLogin from '../images/il-login-page.png';
+import data from './db.json'
 
 
  class LoginPage extends React.Component {
   constructor(props) {
     super(props);
-      this.state = {user:'', password:''};
+      this.state = {user:'', password:'',valid : false ,details : data};
       this.handleUserChange = this.handleUserChange.bind(this);
       this.handlePasswordChange = this.handlePasswordChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit1 = this.handleSubmit1.bind(this);
 
     }
 
@@ -23,11 +25,22 @@ import BackgroundLogin from '../images/il-login-page.png'
       this.setState({password: event.target.value});
     }
   
+    handleSubmit1(event) {
+      
+      this.state.data.map(data => {
+        if(data.id == 2)
+        
+        alert(data.username)
+      })
+      
+    }
+
     handleSubmit(event) {
-      if(this.state.user == "lloyds" && this.state.password == "lloyds123")
-       this.props.history.push('/home',{user : this.state.user})
-       else
-       alert("Enter valid Username")
+      this.state.details.map(data => {
+        if(this.state.user == data.username && this.state.password == data.password)
+        this.props.history.push('/home',{user : this.state.user})
+      })
+      
     }
 
   render(){

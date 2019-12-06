@@ -1,26 +1,22 @@
-[ {
+[           {
                 "id" : 1,
-                "image" : "../images/cards/debit/halifax@2x.png",
-                "name" : "Halifax",
-                "AER" : "0.2% AER",
-                "details" : "PCA",
-                "amount" : "$2500"
+                "username" : "Rajesh",
+                "password" : "rajesh1234"
             },
             {
                 "id" : 2,
-                "image" : "require('../images/cards/debit/hsbc@2x.png')",
-                "name" : "HSBC",
-                "AER" : "0.1% AER",
-                "details" : "SB",
-                "amount" : "$4000"
+                "username" : "Prashanth",
+                "password" : "prashanth1234"
             },
             {
                 "id" : 3,
-                "image" : "require('../images/cards/debit/barclays@2x.png')",
-                "name" : "Barclays",
-                "AER" : "0.25% AER",
-                "details" : "SB",
-                "amount" : "$6000"
+                "username" : "Harish",
+                "password" : "harish1234"
+            },
+            {
+                "id" : 4,
+                "username" : "Srinu",
+                "password" : "srinu1234"
             }
 ]
 
