@@ -25,7 +25,7 @@ import BackgroundLogin from '../images/il-login-page.png'
   
     handleSubmit(event) {
       if(this.state.user == "lloyds" && this.state.password == "lloyds123")
-       this.props.history.push('/home')
+       this.props.history.push('/home',{user : this.state.user})
        else
        alert("Enter valid Username")
     }

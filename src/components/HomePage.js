@@ -8,21 +8,28 @@ import './HomePage.css';
 import imagead from '../images/image-ad@3x.png'
 
 class HomePage extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.state = [{user : ''}]
   }
 
+  componentDidMount(){
+    this.setState({user : this.props.location.state.user})
+    
+  }
 
     render(){
         
         return(
             <div className='container-fluid' style={{paddingLeft:'0px',paddingRight:'0px'}}>
-            <Header />
+            
+            <Header user = {this.state.user}/>
             <div style = {{display:"flex"}}>
               <SideBar />
             <div className='row main-content' style = {{width:"94.5%",height:'100vh',overflow:'auto'}}>
               <div className='col-9' style={{paddingTop:'8%'}}>
               <Banner />
+              
               </div>
               <div className='col-9'>
               <Balance />

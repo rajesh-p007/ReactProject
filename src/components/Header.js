@@ -5,10 +5,11 @@ import imgu from '../images/img-u.png'
 import {Link} from 'react-router-dom';
 
 class Header extends React.Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
+    this.state={user : ''}
   }
+
   render() {
     return (
       <React.Fragment>
@@ -25,8 +26,9 @@ class Header extends React.Component {
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="col">
                 <img className="img_user" src={imgu} />
+                <p style = {{marginTop : '20px' , marginLeft : '10px'}}>{this.props.user}</p>
               </div>
-
+              
               <div style={{ display: 'flex', color: 'rgb(216, 217, 222)', justifyContent: 'center', alignItems: 'center' }} className="col">
                 <Link to="/login"><i className="fa fa-sign-out logout"></i></Link>
               </div>
